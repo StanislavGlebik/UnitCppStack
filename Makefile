@@ -1,7 +1,6 @@
-all: main.cpp
-	g++ main.cpp -o stack.o
-test: test.cpp
+all:  
+	g++ stack.h -o stack.o
+test: 
 	g++ test.cpp -L /usr/lib/ -lcppunit  -o test.o
-
 clean: 
 	rm *.o 

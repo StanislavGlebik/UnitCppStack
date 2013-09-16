@@ -1,4 +1,4 @@
-#include "main.cpp"
+#include "stack.h"
 
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/TestCase.h>
