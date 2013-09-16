@@ -20,6 +20,12 @@ public:
 		CPPUNIT_ASSERT_MESSAGE("Push/pop size isn't zero", stack.size() == 0);
 	}
 	
+	void checkTop() {
+		MyStack stack;
+		stack.Push(1);
+		CPPUNIT_ASSERT_MESSAGE("Top after push isn't one", 1 == stack.Top());
+	}
+
 	void checkPushSize() {
 		MyStack stack;
 		stack.Push(1);
