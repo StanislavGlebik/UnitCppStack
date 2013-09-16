@@ -37,6 +37,7 @@ CPPUNIT_TEST_SUITE(stacktests);
 CPPUNIT_TEST(checkInitSize);	
 CPPUNIT_TEST(checkPushPopSize);
 CPPUNIT_TEST(checkPushSize);
+CPPUNIT_TEST(checkTop);
 CPPUNIT_TEST_SUITE_END();
 };
 
