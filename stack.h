@@ -20,7 +20,18 @@ public:
 	void Pop();
 	void Push(int elem);
 	int Top() const;
+
+	~MyStack();
 };
+
+MyStack::~MyStack() {
+	cell * help;
+	for (size_t i = 0; i < ssize; ++i) {
+		help = p->next;
+		delete p;
+		p = help;
+	}
+}
 
 size_t MyStack::size() const {
 	return ssize;
