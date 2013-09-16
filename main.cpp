@@ -1,4 +1,6 @@
 #include <cppunit/TestRunner.h>
 
-int main() {
-}
+class MyStack {
+
+};
+
