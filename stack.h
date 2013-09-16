@@ -3,6 +3,7 @@
 class MyStack {
 private:
 	size_t ssize;
+
 public:
 	MyStack() {
 		ssize = 0;	
@@ -16,5 +17,13 @@ public:
 
 size_t MyStack::size() const {
 	return ssize;
+}
+
+void MyStack::Pop() {
+	ssize -= 1;
+}
+
+void MyStack::Push(int elem) {
+	ssize += 1;
 }
 

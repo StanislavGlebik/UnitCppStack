@@ -19,10 +19,18 @@ public:
 		stack.Pop();
 		CPPUNIT_ASSERT_MESSAGE("Push/pop size isn't zero", stack.size() == 0);
 	}
+	
+	void checkPushSize() {
+		MyStack stack;
+		stack.Push(1);
+		CPPUNIT_ASSERT_MESSAGE("Push size isn't one", stack.size() == 1);
+	}
+
 
 CPPUNIT_TEST_SUITE(stacktests);
 CPPUNIT_TEST(checkInitSize);	
 CPPUNIT_TEST(checkPushPopSize);
+CPPUNIT_TEST(checkPushSize);
 CPPUNIT_TEST_SUITE_END();
 };
 
