@@ -10,8 +10,11 @@ public:
 
 	size_t size() const; 
 	
+	void Pop();
+	void Push(int elem);
 };
 
 size_t MyStack::size() const {
 	return ssize;
 }
+
