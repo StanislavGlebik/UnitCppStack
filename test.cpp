@@ -8,13 +8,20 @@
 class stacktests: public CppUnit::TestFixture {
 public:
 
-	void checkSize() {
+	void checkInitSize() {
 		MyStack stack;
 		CPPUNIT_ASSERT_MESSAGE("Initial size isn't zero", stack.size() == 0);
 	}
+	
+	void checkPushPopSize() {
+		MyStack stack;
+		stack.Push(1);
+		stack.Pop();
+		CPPUNIT_ASSERT_MESSAGE("Push/pop size isn't zero", stack.size() == 0);
+	}
 
 CPPUNIT_TEST_SUITE(stacktests);
-CPPUNIT_TEST(checkSize);	
+CPPUNIT_TEST(checkInitSize);	
 CPPUNIT_TEST_SUITE_END();
 };
 
