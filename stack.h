@@ -2,12 +2,16 @@
 
 class MyStack {
 private:
-	size_t ize;
+	size_t ssize;
 public:
+	MyStack() {
+		ssize = 0;	
+	}
+
 	size_t size() const; 
 	
 };
 
 size_t MyStack::size() const {
-	return ize;
+	return ssize;
 }
