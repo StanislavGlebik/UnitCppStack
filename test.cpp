@@ -55,6 +55,7 @@ CPPUNIT_TEST(checkPushPopSize);
 CPPUNIT_TEST(checkPushSize);
 CPPUNIT_TEST(checkTop);
 CPPUNIT_TEST(checkPushPushPopSize);
+CPPUNIT_TEST(checkTopAfterPop);
 CPPUNIT_TEST_SUITE_END();
 };
 
