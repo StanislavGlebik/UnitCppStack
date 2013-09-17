@@ -25,6 +25,13 @@ public:
 		stack.Push(1);
 		CPPUNIT_ASSERT_MESSAGE("Top after push isn't one", 1 == stack.Top());
 	}
+	
+	void checkCopyConstructor() {
+		MyStack stack;
+		stack.Push(4);
+		MyStack copy(stack);
+		CPPUNIT_ASSERT_MESSAGE("Didn't copied", 4 == stack.Top());
+	}
 
 	void checkTopAfterPop() {
 		MyStack stack;
@@ -56,6 +63,7 @@ CPPUNIT_TEST(checkPushSize);
 CPPUNIT_TEST(checkTop);
 CPPUNIT_TEST(checkPushPushPopSize);
 CPPUNIT_TEST(checkTopAfterPop);
+CPPUNIT_TEST(checkCopyConstructor);
 CPPUNIT_TEST_SUITE_END();
 };
 
