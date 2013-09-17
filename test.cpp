@@ -1,5 +1,5 @@
 #include "stack.h"
-
+#include <stdio.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/TestCase.h>
 #include <cppunit/extensions/HelperMacros.h>
@@ -30,7 +30,7 @@ public:
 		MyStack stack;
 		stack.Push(4);
 		MyStack copy(stack);
-		CPPUNIT_ASSERT_MESSAGE("Didn't copied", 4 == stack.Top());
+		CPPUNIT_ASSERT_MESSAGE("Didn't copied", 4 == copy.Top());
 	}
 
 	void checkTopAfterPop() {

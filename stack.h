@@ -1,5 +1,7 @@
 #include <cppunit/TestRunner.h>
 #include <stdexcept>
+#include <stdio.h>
+#include <iostream>
 
 class MyStack {
 private:
@@ -8,12 +10,17 @@ private:
 	struct cell {
  		cell * next;
 		int value;
+		cell() {
+			next = NULL;
+		}
 	} *p;
 
 public:
 	MyStack() {
-		ssize = 0;	
+		ssize = 0;
+		p = NULL;
 	}
+	MyStack(const MyStack& another);
 
 	size_t size() const; 
 	
@@ -25,7 +32,11 @@ public:
 };
 
 MyStack::~MyStack() {
+	if (ssize == 0) {
+		return;
+	}
 	cell * help;
+
 	for (size_t i = 0; i < ssize; ++i) {
 		help = p->next;
 		delete p;
@@ -35,6 +46,19 @@ MyStack::~MyStack() {
 
 size_t MyStack::size() const {
 	return ssize;
+}
+MyStack::MyStack(const MyStack& another) {
+	if (another.ssize == 0) {
+		this->p = NULL;
+		this->ssize = 0;
+		return;
+	}
+	cell * cur = another.p;
+	ssize = 0;
+	for (size_t i = 0; i < another.ssize; ++i) {
+		this->Push(cur->value);
+		cur = cur->next;
+	}
 }
 
 void MyStack::Pop() {
