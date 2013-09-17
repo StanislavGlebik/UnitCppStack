@@ -38,7 +38,11 @@ size_t MyStack::size() const {
 }
 
 void MyStack::Pop() {
+	if (ssize == 0) {
+		throw std::runtime_error("Stack is empty!");
+	}
 	ssize -= 1;
+	p = p->next;	
 }
 
 int MyStack::Top() const {
